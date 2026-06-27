@@ -9,10 +9,33 @@
     H1 { text-align: center }
 </STYLE>
 
-<SCRIPT LANGUAGE="JavaScript">
-<!--
+<SCRIPT>
 function process()
 {
+    var f = document.f;
+
+    // Required question groups
+    var questions = ["cafe", "nyt", "book", "giza", "noodles", "calc"];
+
+    // Validate all questions answered
+    for (var q = 0; q < questions.length; q++) {
+        var group = f[questions[q]];
+        var answered = false;
+
+        for (var i = 0; i < group.length; i++) {
+            if (group[i].checked) {
+                answered = true;
+                break;
+            }
+        }
+
+        if (!answered) {
+            alert("Please answer all questions before continuing.");
+            return false;
+        }
+    }
+
+    // ---- existing scoring code below ----
     var tacop = 0;
     var clrs = 0;
     var ai = 0;
@@ -31,6 +54,10 @@ function process()
     var networking = 0;
     var prolog = 0;
     var complexity = 0;
+
+    var value;
+
+    // Existing code continues...
 
     var f = document.f;
     var i = 0;
