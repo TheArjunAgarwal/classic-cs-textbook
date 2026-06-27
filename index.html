@@ -1,0 +1,178 @@
+
+<HTML>
+<HEAD>
+<TITLE>The Classic CS Textbook Test</TITLE>
+<STYLE type="text/css">
+    TD { vertical-align: top }
+    TD.question { background-color: #CCCCFF }
+    TD.button { text-align: center; background-color: #CCFFCC }
+    H1 { text-align: center }
+</STYLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function process()
+{
+    var tacop = 0;
+    var clrs = 0;
+    var ai = 0;
+    var toc = 0;
+    var cattheory = 0;
+    var compiler = 0;
+    var architecture = 0;
+    var data = 0;
+    var haskell = 0;
+    var logic = 0;
+    var infotheory = 0;
+    var random = 0;
+    var osdesign = 0;
+    var termrewriting = 0;
+    var quantum = 0;
+    var networking = 0;
+    var prolog = 0;
+    var complexity = 0;
+
+    var f = document.f;
+    var i = 0;
+
+    for (i = 0; i < f.cafe.length; i++) if (f.cafe[i].checked) value = f.cafe[i].value;
+    if (value == "1") { ai++; data++; haskell++; infotheory++; random++; quantum++; networking++; prolog++; termrewriting++;}
+    if (value == "2") { tacop++; clrs++; toc++; cattheory++; compiler ++; architecture++; logic++; osdesign++; complexity++;}
+    if (value == "3") { tacop++; clrs++; toc++; cattheory++; compiler ++; architecture++; logic++; osdesign++; complexity++;}
+    if (value == "4") { ai++; data++; haskell++; infotheory++; random++; quantum++; networking++; prolog++; termrewriting++;}
+
+
+    for (i = 0; i < f.nyt.length; i++) if (f.nyt[i].checked) value = f.nyt[i].value;
+    if (value == "1") { prolog++; networking++; termrewriting++; osdesign++; logic++; haskell++; data++; architecture++; cattheory++; }
+    if (value == "2") { complexity++; quantum++; random++; infotheory++; compiler++; toc++; ai++; clrs++; tacop++; }
+    if (value == "3") { prolog++; networking++; termrewriting++; osdesign++; logic++; haskell++; data++; architecture++; cattheory++; }
+    if (value == "4") { complexity++; quantum++; random++; infotheory++; compiler++; toc++; ai++; clrs++; tacop++;}
+
+    for (i = 0; i < f.book.length; i++) if (f.book[i].checked) value = f.book[i].value;
+    if (value == "1") { clrs++; ai++; toc++; data++; haskell++; infotheory++; random++; prolog++; networking++; }
+    if (value == "2") { clrs++; ai++; toc++; data++; haskell++; infotheory++; random++; prolog++; networking++; }
+    if (value == "3") { tacop++; cattheory++; compiler++; architecture++; logic++; osdesign++; quantum++; complexity++; termrewriting++; }
+    if (value == "4") { tacop++; cattheory++; compiler++; architecture++; logic++; osdesign++; quantum++; complexity++; termrewriting++; }
+
+    for (i = 0; i < f.giza.length; i++) if (f.giza[i].checked) value = f.giza[i].value;
+    if (value == "1") { tacop++; ai++; compiler++; architecture++; data++; osdesign++; networking++; haskell++; prolog++; }
+    if (value == "2") { clrs++; toc++; cattheory++; quantum++; logic++; infotheory++; random++; termrewriting++; complexity++;  }
+    if (value == "3") { clrs++; toc++; cattheory++; quantum++; logic++; infotheory++; random++; termrewriting++; complexity++; }
+    if (value == "4") { tacop++; ai++; compiler++; architecture++; data++; osdesign++; networking++; haskell++; prolog++; }
+
+    for (i = 0; i < f.noodles.length; i++) if (f.noodles[i].checked) value = f.noodles[i].value;
+    if (value == "1") { tacop++; toc++; cattheory++; architecture++; haskell++; logic++; termrewriting++; networking++; prolog++; }
+    if (value == "2") { clrs++; ai++; compiler++; data++; infotheory++; random++; osdesign++; quantum++; complexity++; }
+    if (value == "3") { tacop++; toc++; cattheory++; architecture++; haskell++; logic++; termrewriting++; networking++; prolog++; }
+    if (value == "4") { clrs++; ai++; compiler++; data++; infotheory++; random++; osdesign++; quantum++; complexity++; }
+
+    for (i = 0; i < f.calc.length; i++) if (f.calc[i].checked) value = f.calc[i].value;
+    if (value == "1") { tacop++; ai++;  compiler++; architecture++; data++; haskell++; osdesign++; networking++; prolog++; }
+    if (value == "2") { clrs++; toc++; cattheory++; logic++; infotheory++; random++; termrewriting++; quantum++; complexity++; }
+    if (value == "3") { clrs++; toc++; cattheory++; logic++; infotheory++; random++; termrewriting++; quantum++; complexity++; }
+    if (value == "4") { tacop++; ai++;  compiler++; architecture++; data++; haskell++; osdesign++; networking++; prolog++; }
+
+    var out = "tacop";
+    i = tacop;
+    if (clrs > i) { out = "clrs"; i = clrs; }
+    if (ai > i) { out = "ai"; i = ai; }
+    if (toc > i) { out = "toc"; i = toc; }
+    if (cattheory > i) { out = "cattheory"; i = cattheory; }
+    if (compiler > i) { out = "compiler"; i = compiler; }
+    if (architecture > i) { out = "architecture"; i = architecture; }
+    if (data > i) { out = "data"; i = data; }
+    if (haskell > i) { out = "haskell"; i = haskell; }
+    if (logic > i) { out = "logic"; i = logic; }
+    if (infotheory > i) { out = "infotheory"; i = infotheory; }
+    if (random > i) { out = "random"; i = random; }
+    if (osdesign > i) { out = "osdesign"; i = osdesign; }
+    if (termrewriting > i) { out = "termrewriting"; i = termrewriting; }
+    if (quantum > i) { out = "quantum"; i = quantum; }
+    if (networking > i) { out = "networking"; i = networking; }
+    if (prolog > i) { out = "prolog"; i = prolog; }
+    if (complexity > i) { out = "complexity"; i = complexity; }
+
+    location.href = "CCS/" + out + ".html";
+}
+function err(msg, url, line)
+{
+        location.href = "error.html";
+}
+//window.onerror = err;
+// -->
+</SCRIPT>
+</HEAD>
+<BODY>
+<h1>The Classic CS Textbook Test</h1>
+Which classic CS textbook are you?
+<HR>
+
+<FORM NAME="f">
+<table border=0 cellpadding=3 cellspacing=0>
+<tr><td colspan=2 class="question">What would you order at a cafe?</td></tr>
+<tr><td>
+    <INPUT TYPE="radio" NAME="cafe" VALUE="1"> Matcha<BR>
+    <INPUT TYPE="radio" NAME="cafe" VALUE="2"> Coffee<BR>
+</td><td>
+    <INPUT TYPE="radio" NAME="cafe" VALUE="3"> Strawberry Milkshake<BR>
+    <INPUT TYPE="radio" NAME="cafe" VALUE="4"> Whatever the drink of the week is<BR>
+</td></tr>
+
+
+<tr><td colspan=2 class="question">Which NYT puzzle is your favorite?</td></tr>
+<tr><td>
+    <INPUT TYPE="radio" NAME="nyt" VALUE="1"> Wordle<BR>
+    <INPUT TYPE="radio" NAME="nyt" VALUE="2"> Crossword<BR>
+</td><td>
+    <INPUT TYPE="radio" NAME="nyt" VALUE="3"> Sudoku<BR>
+    <INPUT TYPE="radio" NAME="nyt" VALUE="4"> Connections<BR>
+</td></tr>
+
+<tr><td colspan=2 class="question">What kind of book is your ideal summer read?</td></tr>
+<tr><td>
+    <INPUT TYPE="radio" NAME="book" VALUE="1"> A light breezy rom-com<BR>
+    <INPUT TYPE="radio" NAME="book" VALUE="2"> A collection of short-stories/poems<BR>
+</td><td>
+    <INPUT TYPE="radio" NAME="book" VALUE="3"> A cerebral murder mystery<BR>
+    <INPUT TYPE="radio" NAME="book" VALUE="4"> A textbook, there is so much to learn<BR>
+</td></tr>
+
+<tr><td colspan=2 class="question">Which of these is the most fascinating thing about the Pyramids of Giza?</td></tr>
+<tr><td>
+    <INPUT TYPE="radio" NAME="giza" VALUE="1"> How did they even make these?<BR>
+    <INPUT TYPE="radio" NAME="giza" VALUE="2"> Why did they make these?<BR>
+</td><td>
+    <INPUT TYPE="radio" NAME="giza" VALUE="3"> What are the stories told by these pyramids?<BR>
+    <INPUT TYPE="radio" NAME="giza" VALUE="4"> Who cares? There are better things to do than <br> wonder about random pyramids of an long gone civilization.<BR>
+</td></tr>
+
+<tr><td colspan=2 class="question">What is the correct way to eat noodles?</td></tr>
+<tr><td>
+    <INPUT TYPE="radio" NAME="noodles" VALUE="1"> Fork<BR>
+    <INPUT TYPE="radio" NAME="noodles" VALUE="2"> Chopstick<BR>
+</td><td>
+    <INPUT TYPE="radio" NAME="noodles" VALUE="3"> Hand<BR>
+    <INPUT TYPE="radio" NAME="noodles" VALUE="4"> Don't. They are grossly unhealthy.<BR>
+</td></tr>
+
+<tr><td colspan=2 class="question">The best thing about a calculator is:</td></tr>
+<tr><td>
+    <INPUT TYPE="radio" NAME="calc" VALUE="1"> It can do calculations quickly, duh.<BR>
+    <INPUT TYPE="radio" NAME="calc" VALUE="2"> Nothing, it doesn't do anything that matters.<BR>
+</td><td>
+    <INPUT TYPE="radio" NAME="calc" VALUE="3"> It helps me be sure that I am not making silly errors.<BR>
+    <INPUT TYPE="radio" NAME="calc" VALUE="4"> It exists! It's so cool that such a machine can even be made!<BR>
+</td></tr>
+
+<tr><td colspan=2 class="button"><INPUT TYPE="button" VALUE="Which classic CS textbook am I?" onClick="process();"></td></tr>
+</table>
+</FORM>
+
+<HR>
+Made by <a href="https://thearjunagarwal.github.io/">Arjun Maneesh Agarwal</a>
+<BR>
+Inspired by <a href="https://math.jhu.edu/~savitt/GTM.html">David Savitt's "The Springer GTM Test"</a>
+<BR>
+<I>Last Updated: <SCRIPT LANGUAGE="JavaScript">document.write(document.lastModified);</SCRIPT></I><BR>
+
+</BODY> </HTML>
