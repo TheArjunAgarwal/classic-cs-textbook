@@ -99,27 +99,36 @@ function process()
     if (value == "3") { clrs++; toc++; cattheory++; logic++; infotheory++; random++; termrewriting++; quantum++; complexity++; }
     if (value == "4") { tacop++; ai++;  compiler++; architecture++; data++; haskell++; osdesign++; networking++; prolog++; }
 
-    var out = "tacop";
-    i = tacop;
-    if (clrs > i) { out = "clrs"; i = clrs; }
-    if (ai > i) { out = "ai"; i = ai; }
-    if (toc > i) { out = "toc"; i = toc; }
-    if (cattheory > i) { out = "cattheory"; i = cattheory; }
-    if (compiler > i) { out = "compiler"; i = compiler; }
-    if (architecture > i) { out = "architecture"; i = architecture; }
-    if (data > i) { out = "data"; i = data; }
-    if (haskell > i) { out = "haskell"; i = haskell; }
-    if (logic > i) { out = "logic"; i = logic; }
-    if (infotheory > i) { out = "infotheory"; i = infotheory; }
-    if (random > i) { out = "random"; i = random; }
-    if (osdesign > i) { out = "osdesign"; i = osdesign; }
-    if (termrewriting > i) { out = "termrewriting"; i = termrewriting; }
-    if (quantum > i) { out = "quantum"; i = quantum; }
-    if (networking > i) { out = "networking"; i = networking; }
-    if (prolog > i) { out = "prolog"; i = prolog; }
-    if (complexity > i) { out = "complexity"; i = complexity; }
+    var scores = {
+    tacop: tacop,
+    clrs: clrs,
+    ai: ai,
+    toc: toc,
+    cattheory: cattheory,
+    compiler: compiler,
+    architecture: architecture,
+    data: data,
+    haskell: haskell,
+    logic: logic,
+    infotheory: infotheory,
+    random: random,
+    osdesign: osdesign,
+    termrewriting: termrewriting,
+    quantum: quantum,
+    networking: networking,
+    prolog: prolog,
+    complexity: complexity
+};
 
-    location.href = "ccs/" + out + ".html";
+var maxScore = Math.max(...Object.values(scores));
+
+var tied = Object.keys(scores).filter(function(book) {
+    return scores[book] === maxScore;
+});
+
+var out = tied[Math.floor(Math.random() * tied.length)];
+
+location.href = "ccs/" + out + ".html";
 }
 function err(msg, url, line)
 {
